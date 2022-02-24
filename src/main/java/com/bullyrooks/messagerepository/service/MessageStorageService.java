@@ -1,6 +1,7 @@
 package com.bullyrooks.messagerepository.service;
 
 import com.bullyrooks.messagerepository.config.LoggingEnabled;
+import com.bullyrooks.messagerepository.event.dto.MessageEvent;
 import com.bullyrooks.messagerepository.repository.MessageRepository;
 import com.bullyrooks.messagerepository.repository.document.MessageDocument;
 import com.bullyrooks.messagerepository.repository.mapper.MessageDocumentMapper;
@@ -36,13 +37,10 @@ public class MessageStorageService {
     }
 
 
-    public Message saveMessage(Message message){
-
-        MessageDocument msgDoc = MessageDocumentMapper.INSTANCE.modelToDocument(message);
-
+    public MessageDocument saveMessage(MessageDocument msgDoc){
         log.info("saving document: {}", msgDoc);
         MessageDocument returnDoc = messageRepository.save(msgDoc);
         messageSaved.increment();
-        return MessageDocumentMapper.INSTANCE.documentToModel(returnDoc);
+        return returnDoc;
     }
 }

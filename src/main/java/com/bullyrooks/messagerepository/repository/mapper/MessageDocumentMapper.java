@@ -1,7 +1,7 @@
 package com.bullyrooks.messagerepository.repository.mapper;
 
+import com.bullyrooks.messagerepository.event.dto.MessageEvent;
 import com.bullyrooks.messagerepository.repository.document.MessageDocument;
-import com.bullyrooks.messagerepository.service.model.Message;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 
@@ -9,8 +9,8 @@ import org.mapstruct.factory.Mappers;
 public interface MessageDocumentMapper {
     MessageDocumentMapper INSTANCE = Mappers.getMapper(MessageDocumentMapper.class);
 
-    MessageDocument modelToDocument(Message model);
+    MessageDocument modelToDocument(MessageEvent msgEvent);
 
-    Message documentToModel(MessageDocument returnDoc);
+    MessageEvent documentToModel(MessageDocument returnDoc);
 }
 
