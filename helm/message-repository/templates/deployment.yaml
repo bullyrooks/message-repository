@@ -62,6 +62,8 @@ spec:
               secretKeyRef:
                 name: confluent-secrets
                 key: SPRING_KAFKA_PROPERTIES_SASL_JAAS_CONFIG
+          - name: OTEL_INSTRUMENTATION_COMMON_EXPERIMENTAL_SUPPRESS-MESSAGING-RECEIVE-SPANS
+            value: "true"
           livenessProbe:
             httpGet:
               path: /actuator/health/liveness
