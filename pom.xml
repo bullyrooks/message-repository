@@ -16,11 +16,13 @@
 	<properties>
 		<java.version>11</java.version>
 		<spring-cloud.version>2021.0.1</spring-cloud.version>
+		<spring-cloud-stream.version>2.2.1.RELEASE</spring-cloud-stream.version>
 		<org.mapstruct.version>1.4.2.Final</org.mapstruct.version>
 		<logstash-logback-encoder.version>6.4</logstash-logback-encoder.version>
 		<log4j2.version>2.17.1</log4j2.version>
 		<logzio-logback-appender.version>v1.0.25</logzio-logback-appender.version>
 		<micrometer-registry-logzio.version>1.0.2</micrometer-registry-logzio.version>
+		<javafaker.version>1.0.2</javafaker.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -35,6 +37,13 @@
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-stream-binder-kafka</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-stream</artifactId>
+			<type>test-jar</type>
+			<classifier>test-binder</classifier>
+			<scope>test</scope>
 		</dependency>
 
 		<dependency>
@@ -53,13 +62,7 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-stream</artifactId>
-			<scope>test</scope>
-			<classifier>test-binder</classifier>
-			<type>test-jar</type>
-		</dependency>
+
 
 		<!-- Health Checks and Metrics -->
 		<dependency>
@@ -99,6 +102,19 @@
 			<artifactId>micrometer-registry-logzio</artifactId>
 			<version>${micrometer-registry-logzio.version}</version>
 		</dependency>
+
+		<dependency>
+			<groupId>com.github.javafaker</groupId>
+			<artifactId>javafaker</artifactId>
+			<version>${javafaker.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>de.flapdoodle.embed</groupId>
+			<artifactId>de.flapdoodle.embed.mongo</artifactId>
+			<scope>test</scope>
+		</dependency>
+
 	</dependencies>
 	<dependencyManagement>
 		<dependencies>

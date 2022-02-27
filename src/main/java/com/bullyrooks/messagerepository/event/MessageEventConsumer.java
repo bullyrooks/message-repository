@@ -20,6 +20,6 @@ public class MessageEventConsumer {
     @Bean
     public Consumer<MessageEvent> consumeMessageEvent(){
         return (eventIn) -> storageService
-                .saveMessage(MessageDocumentMapper.INSTANCE.modelToDocument(eventIn));
+                .saveMessage(MessageDocumentMapper.INSTANCE.eventToDocument(eventIn));
     }
 }

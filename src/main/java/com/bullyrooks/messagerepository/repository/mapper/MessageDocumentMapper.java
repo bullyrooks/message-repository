@@ -9,8 +9,8 @@ import org.mapstruct.factory.Mappers;
 public interface MessageDocumentMapper {
     MessageDocumentMapper INSTANCE = Mappers.getMapper(MessageDocumentMapper.class);
 
-    MessageDocument modelToDocument(MessageEvent msgEvent);
+    MessageDocument eventToDocument(MessageEvent msgEvent);
 
-    MessageEvent documentToModel(MessageDocument returnDoc);
+    MessageEvent documentToEvent(MessageDocument returnDoc);
 }
 

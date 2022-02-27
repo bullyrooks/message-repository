@@ -4,8 +4,9 @@ spring:
   cloud:
     stream:
       bindings:
-        consumeMessageEvent-in-0:
+        messageEventInput:
           destination: message.created
+          content-type: application/json
   kafka:
     properties:
       sasl.mechanism: PLAIN
