@@ -59,12 +59,14 @@ spec:
                 key: SPRING_KAFKA_PROPERTIES_SASL_JAAS_CONFIG
           livenessProbe:
             httpGet:
-              path: /
-              port: http
+              path: /actuator/health/liveness
+              port: 8080
+            initialDelaySeconds: 120
           readinessProbe:
             httpGet:
-              path: /
-              port: http
+              path: /actuator/health/readiness
+              port: 8080
+            initialDelaySeconds: 120
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       {{- with .Values.nodeSelector }}
