@@ -1,11 +1,8 @@
 package com.bullyrooks.messagerepository.service;
 
 import com.bullyrooks.messagerepository.config.LoggingEnabled;
-import com.bullyrooks.messagerepository.event.dto.MessageEvent;
 import com.bullyrooks.messagerepository.repository.MessageRepository;
 import com.bullyrooks.messagerepository.repository.document.MessageDocument;
-import com.bullyrooks.messagerepository.repository.mapper.MessageDocumentMapper;
-import com.bullyrooks.messagerepository.service.model.Message;
 import io.micrometer.core.instrument.Counter;
 import io.micrometer.core.instrument.MeterRegistry;
 import lombok.extern.slf4j.Slf4j;
