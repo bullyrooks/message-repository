@@ -52,6 +52,11 @@ spec:
               secretKeyRef:
                 name: logzio-secrets
                 key: LOGZIO_METRICS_TOKEN
+          - name: SPRING_DATA_MONGODB_URI
+            valueFrom:
+              secretKeyRef:
+                name: mongo-secrets
+                key: SPRING_DATA_MONGODB_URI
           - name: SPRING_KAFKA_PROPERTIES_SASL_JAAS_CONFIG
             valueFrom:
               secretKeyRef:
