@@ -35,6 +35,13 @@ securityContext: {}
   # runAsNonRoot: true
   # runAsUser: 1000
 
+service:
+  type: NodePort
+  port: 8082
+  targetPort: 8082
+
+port:
+  containerPort: 8082
 
 ingress:
   enabled: false
